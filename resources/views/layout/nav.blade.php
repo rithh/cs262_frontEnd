@@ -36,33 +36,33 @@
             <ul class="navbar-nav nav nav-pills me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     @auth
-                    <a class="nav-link" href="#">
-                        <span class="iconify" data-icon="uil:user"></span>
-                        Hello, {{Auth::user()->name}}
-                    </a>
+                        <a class="nav-link" href="/newPage">
+                            <span class="iconify" data-icon="uil:user"></span>
+                            Hello, {{ Auth::user()->name }}
+                        </a>
                     @endauth
                     @guest
-                    <a class="nav-link" href="{{ url('login') }}">
-                        <span class="iconify" data-icon="oi:account-login"></span>
-                        Login
-                    </a>
+                        <a class="nav-link" href="{{ url('login') }}">
+                            <span class="iconify" data-icon="oi:account-login"></span>
+                            Login
+                        </a>
                     @endguest
                 </li>
                 <li class="nav-item">
                     @auth
-                    <a class="nav-link" href="{{ route('logout') }}">
-                        <span class="iconify" data-icon="ic:baseline-logout" data-rotate="180deg"></span>
-                        Logout
-                    </a>
-                    <form id="frm-logout" action="{{ route('logout') }}" method="post" style="display: none;">
-                        {{ csrf_field() }}
-                    </form>
+                        <a class="nav-link" href="{{ route('logout') }}">
+                            <span class="iconify" data-icon="ic:baseline-logout" data-rotate="180deg"></span>
+                            Logout
+                        </a>
+                        <form id="frm-logout" action="{{ route('logout') }}" method="post" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
                     @endauth
                     @guest
-                    <a class="nav-link" href="/register">
-                        <span class="iconify" data-icon="mdi:register"></span>
-                        Register
-                    </a>
+                        <a class="nav-link" href="/register">
+                            <span class="iconify" data-icon="mdi:register"></span>
+                            Register
+                        </a>
                     @endguest
                 </li>
             </ul>

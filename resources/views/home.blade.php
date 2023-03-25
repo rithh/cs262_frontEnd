@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\PageController;
-use Carbon\Carbon;
 use App\Models\Bus;
 ?>
 @extends('layout.master')
@@ -33,7 +32,13 @@ use App\Models\Bus;
                 <div class="row">
                     <div class="col-md-3">
                         <form class="form-inline">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <input class="form-control mr-sm-2" type="search" name="depart" list="location-depart"
+                                placeholder="Choose a destination" aria-label="Search">
+                            <datalist id="location-depart">
+                                <option value="Phnom Penh">
+                                <option value="Siem Reap">
+                                <option value="Sihanouk Ville">
+                            </datalist>
                     </div>
                     <div class="col-md-1 col-sm-12">
                         <button class="ex-btn">
@@ -41,10 +46,18 @@ use App\Models\Bus;
                         </button>
                     </div>
                     <div class="col-md-3">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <input class="form-control mr-sm-2" type="search" name="arrive" list="location-arrive"
+                            placeholder="Choose a destination" aria-label="Search">
+                        <datalist id="location-arrive">
+                            <option value="Phnom Penh">
+                            <option value="Siem Reap">
+                            <option value="Sihanouk Ville">
+                            <option value="Poipet">
+                        </datalist>
                     </div>
                     <div class="col-md-3">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <input class="form-control mr-sm-2" placeholder="28/02/2023" disabled
+                            style="background-color: #cccccc; color:white">
                     </div>
                     <div class="col-md-2 col-sm-12 mb-4 mb-md-4">
                         <button class="search-btn">
@@ -57,17 +70,17 @@ use App\Models\Bus;
                 <div class="row">
                     <div class="col-1">
                         <button class="sort-btn">
-                            <a href="#">Earliest</a>
+                            <a href="/">Earliest</a>
                         </button>
                     </div>
                     <div class="col-1">
                         <button class="sort-btn">
-                            <a href="#">Fastest</a>
+                            <a href="/home_fastest">Fastest</a>
                         </button>
                     </div>
                     <div class="col-1">
                         <button class="sort-btn">
-                            <a href="#">Cheapest</a>
+                            <a href="/home_cheapest">Cheapest</a>
                         </button>
                     </div>
                 </div>
